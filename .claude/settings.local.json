@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:my-best.com)",
+      "WebFetch(domain:kakaku.com)",
+      "WebFetch(domain:fridge.rank-king.jp)",
+      "WebFetch(domain:corporate.jp.sharp)",
+      "WebFetch(domain:kaden-master.com)",
+      "WebFetch(domain:clas.style)",
+      "WebFetch(domain:www.toshiba-lifestyle.com)"
+    ]
+  }
+}
