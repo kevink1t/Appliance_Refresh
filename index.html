@@ -393,6 +393,65 @@
     .lbadge-mybest   { background: #2e7d32; color: #fff; }
     .lbadge-review   { background: #6a1b9a; color: #fff; }
 
+    /* ========== カルーセル ========== */
+    .mc { position:relative; width:100%; border-radius:8px; overflow:hidden; background:#f4f6f9; margin-bottom:12px; }
+    .mc-wrap { overflow:hidden; width:100%; }
+    .mc-track { display:flex; transition:transform .35s cubic-bezier(.4,0,.2,1); will-change:transform; }
+    .mc-slide { flex-shrink:0; width:100%; position:relative; }
+    .mc-slide img {
+      display:block; width:100%; height:220px;
+      object-fit:contain; background:#f8f9fc; padding:8px;
+      cursor:zoom-in; transition:transform .2s;
+    }
+    .mc-slide img:hover { transform:scale(1.03); }
+    .mc-slide.empty-slide { height:220px; display:flex; align-items:center; justify-content:center;
+      color:#aaa; font-size:12px; flex-direction:column; gap:6px; }
+    .mc-btn {
+      position:absolute; top:50%; transform:translateY(-50%);
+      background:rgba(0,0,0,.45); color:#fff; border:none;
+      width:30px; height:52px; border-radius:4px; font-size:24px; line-height:1;
+      cursor:pointer; z-index:2; transition:background .15s; padding:0;
+    }
+    .mc-btn:hover { background:rgba(0,0,0,.72); }
+    .mc-p { left:4px; }
+    .mc-n { right:4px; }
+    .mc-btn.mc-hidden { display:none; }
+    .mc-dots { display:flex; justify-content:center; gap:5px; padding:5px 0 3px; }
+    .mc-dot {
+      width:7px; height:7px; border-radius:50%; border:none;
+      background:#d1d5db; cursor:pointer; padding:0; transition:background .2s;
+    }
+    .mc-dot.active { background:var(--blue); }
+    .mc-dots.mc-hidden { display:none; }
+    .mc-counter { text-align:center; font-size:11px; color:var(--text-muted); padding-bottom:3px; }
+
+    /* ========== ライトボックス ========== */
+    #lb-overlay {
+      display:none; position:fixed; inset:0; z-index:9999;
+      background:rgba(0,0,0,.90); align-items:center; justify-content:center;
+    }
+    #lb-overlay.lb-open { display:flex; }
+    #lb-overlay img { max-width:88vw; max-height:80vh; object-fit:contain;
+      border-radius:10px; box-shadow:0 8px 48px rgba(0,0,0,.7); display:block; }
+    .lb-close {
+      position:fixed; top:16px; right:20px; background:rgba(255,255,255,.15);
+      border:none; color:#fff; font-size:28px; cursor:pointer;
+      width:40px; height:40px; border-radius:50%; line-height:1;
+    }
+    .lb-close:hover { background:rgba(255,255,255,.3); }
+    .lb-nav-btn {
+      position:fixed; top:50%; transform:translateY(-50%);
+      background:rgba(255,255,255,.15); border:none; color:#fff;
+      width:48px; height:80px; font-size:30px; cursor:pointer; border-radius:6px; transition:background .15s;
+    }
+    .lb-nav-btn:hover { background:rgba(255,255,255,.3); }
+    #lb-prev { left:12px; }
+    #lb-next { right:12px; }
+    #lb-cap { position:fixed; bottom:20px; left:0; right:0; text-align:center;
+      color:rgba(255,255,255,.75); font-size:13px; padding:0 60px; }
+    #lb-count { position:fixed; top:20px; left:50%; transform:translateX(-50%);
+      color:rgba(255,255,255,.6); font-size:12px; }
+
     /* ========== 価格帯バー ========== */
     .price-band {
       display: flex;
@@ -517,6 +576,26 @@
           <tbody>
             <tr>
               <td>
+                <div class="mc" data-i="0">
+                  <div class="mc-wrap"><div class="mc-track">
+                    <div class="mc-slide"><img src="https://kadenfan.hitachi.co.jp/rei/lineup/rhxcc62x/img/img_main_pc.jpg" alt="R-HXCC62X-X 正面（クリスタルミラー）" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="mc-slide"><img src="https://kadenfan.hitachi.co.jp/rei/lineup/rhxcc62x/img/img_model01.png" alt="外観・カラーバリエーション" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="mc-slide"><img src="https://kadenfan.hitachi.co.jp/rei/lineup/rhxcc62x/img/img_sli01_pc.jpg" alt="収納スライド" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="mc-slide"><img src="https://kadenfan.hitachi.co.jp/rei/lineup/rhxcc62x/img/img_04_pc.jpg" alt="真空チルド機能" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="mc-slide"><img src="https://kadenfan.hitachi.co.jp/rei/lineup/rhxcc62x/img/img_05_pc.jpg" alt="デリシャス冷凍" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="mc-slide"><img src="https://kadenfan.hitachi.co.jp/rei/lineup/rhxcc62x/img/img_06_pc.jpg" alt="新鮮スリープ野菜室" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="mc-slide"><img src="https://kadenfan.hitachi.co.jp/rei/lineup/rhxcc62x/img/img_07_pc.jpg" alt="収納設計・使いやすさ" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="mc-slide"><img src="https://kadenfan.hitachi.co.jp/rei/lineup/rhxcc62x/img/img_09_pc.jpg" alt="AIカメラ機能" loading="lazy" referrerpolicy="no-referrer"></div>
+                  </div></div>
+                  <button class="mc-btn mc-p" aria-label="前の画像">&#8249;</button>
+                  <button class="mc-btn mc-n" aria-label="次の画像">&#8250;</button>
+                  <div class="mc-dots">
+                    <button class="mc-dot active"></button><button class="mc-dot"></button>
+                    <button class="mc-dot"></button><button class="mc-dot"></button>
+                    <button class="mc-dot"></button><button class="mc-dot"></button>
+                    <button class="mc-dot"></button><button class="mc-dot"></button>
+                  </div>
+                </div>
                 <div class="model-name">R-HXCC62X-X<span class="model-year">2025</span></div>
                 <div class="link-badges">
                   <a class="lbadge lbadge-official" href="https://kadenfan.hitachi.co.jp/rei/lineup/rhxcc62x/" target="_blank">🏠 公式サイト</a>
@@ -539,6 +618,23 @@
             </tr>
             <tr>
               <td>
+                <div class="mc" data-i="0">
+                  <div class="mc-wrap"><div class="mc-track">
+                    <div class="mc-slide"><img src="https://kadenfan.hitachi.co.jp/rei/lineup/rhxcc62x/img/img_main_pc.jpg" alt="R-HXC62X 正面" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="mc-slide"><img src="https://kadenfan.hitachi.co.jp/rei/lineup/rhxc62x/img/img_model01.png" alt="外観・カラーバリエーション" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="mc-slide"><img src="https://kadenfan.hitachi.co.jp/rei/lineup/rhxc62x/img/img_model02.png" alt="庫内レイアウト" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="mc-slide"><img src="https://kadenfan.hitachi.co.jp/rei/lineup/rhxc62x/img/img_sli01_pc.jpg" alt="収納・機能スライド" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="mc-slide"><img src="https://kadenfan.hitachi.co.jp/rei/lineup/rhxcc62x/img/img_04_pc.jpg" alt="真空チルド機能" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="mc-slide"><img src="https://kadenfan.hitachi.co.jp/rei/lineup/rhxcc62x/img/img_06_pc.jpg" alt="野菜室鮮度保持" loading="lazy" referrerpolicy="no-referrer"></div>
+                  </div></div>
+                  <button class="mc-btn mc-p" aria-label="前の画像">&#8249;</button>
+                  <button class="mc-btn mc-n" aria-label="次の画像">&#8250;</button>
+                  <div class="mc-dots">
+                    <button class="mc-dot active"></button><button class="mc-dot"></button>
+                    <button class="mc-dot"></button><button class="mc-dot"></button>
+                    <button class="mc-dot"></button><button class="mc-dot"></button>
+                  </div>
+                </div>
                 <div class="model-name">R-HXC62X<span class="model-year">2025</span></div>
                 <div class="link-badges">
                   <a class="lbadge lbadge-official" href="https://kadenfan.hitachi.co.jp/rei/lineup/rhxc62x/" target="_blank">🏠 公式サイト</a>
@@ -559,6 +655,22 @@
             </tr>
             <tr>
               <td>
+                <div class="mc" data-i="0">
+                  <div class="mc-wrap"><div class="mc-track">
+                    <div class="mc-slide"><img src="https://kadenfan.hitachi.co.jp/rei/lineup/rhwc62x/img/img_model01.png" alt="R-HWC62X 正面外観" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="mc-slide"><img src="https://kadenfan.hitachi.co.jp/rei/lineup/rhwc62x/img/img_sli01_pc.png" alt="AIカメラ・庫内管理" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="mc-slide"><img src="https://kadenfan.hitachi.co.jp/rei/lineup/rhwc62x/img/img_sli02_pc.png" alt="まるごとチルド機能" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="mc-slide"><img src="https://kadenfan.hitachi.co.jp/rei/lineup/rhwc62x/img/img_model02.png" alt="庫内レイアウト" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="mc-slide"><img src="https://kadenfan.hitachi.co.jp/rei/lineup/rhwc62x/img/img_g2020_top.png" alt="冷蔵室上部詳細" loading="lazy" referrerpolicy="no-referrer"></div>
+                  </div></div>
+                  <button class="mc-btn mc-p" aria-label="前の画像">&#8249;</button>
+                  <button class="mc-btn mc-n" aria-label="次の画像">&#8250;</button>
+                  <div class="mc-dots">
+                    <button class="mc-dot active"></button><button class="mc-dot"></button>
+                    <button class="mc-dot"></button><button class="mc-dot"></button>
+                    <button class="mc-dot"></button>
+                  </div>
+                </div>
                 <div class="model-name">R-HWC62X<span class="model-year">2025</span></div>
                 <div class="link-badges">
                   <a class="lbadge lbadge-official" href="https://kadenfan.hitachi.co.jp/rei/lineup/rhwc62x/" target="_blank">🏠 公式サイト</a>
@@ -631,6 +743,22 @@
           <tbody>
             <tr>
               <td>
+                <div class="mc" data-i="0">
+                  <div class="mc-wrap"><div class="mc-track">
+                    <div class="mc-slide"><img src="https://panasonicjp.scene7.com/is/image/panasonicjp/NR-F65WX2-X_shomen_close?fmt=png-alpha&wid=600" alt="NR-F65WX2 正面（ステンレスシルバー）" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="mc-slide"><img src="https://panasonicjp.scene7.com/is/image/panasonicjp/NR-F65WX2-H_shomen_close?fmt=png-alpha&wid=600" alt="NR-F65WX2 正面（ハーモニーブラウン）" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="mc-slide"><img src="https://panasonicjp.scene7.com/is/image/panasonicjp/NR-F65WX2-X_shomen_open?fmt=png-alpha&wid=600" alt="NR-F65WX2 庫内全体" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="mc-slide"><img src="https://panasonicjp.scene7.com/is/image/panasonicjp/NR-F65WX2-X_reito?fmt=png-alpha&wid=600" alt="NR-F65WX2 冷凍室（はやうま冷凍）" loading="lazy" referrerpolicy="no-referrer"></div>
+                  </div></div>
+                  <button class="mc-btn mc-p" aria-label="前の画像">&#8249;</button>
+                  <button class="mc-btn mc-n" aria-label="次の画像">&#8250;</button>
+                  <div class="mc-dots">
+                    <button class="mc-dot active"></button>
+                    <button class="mc-dot"></button>
+                    <button class="mc-dot"></button>
+                    <button class="mc-dot"></button>
+                  </div>
+                </div>
                 <div class="model-name">NR-F65WX2<span class="model-year">2025</span></div>
                 <div class="link-badges">
                   <a class="lbadge lbadge-official" href="https://panasonic.jp/reizo/products/NR-F65WX2.html" target="_blank">🏠 公式サイト</a>
@@ -652,6 +780,22 @@
             </tr>
             <tr>
               <td>
+                <div class="mc" data-i="0">
+                  <div class="mc-wrap"><div class="mc-track">
+                    <div class="mc-slide"><img src="https://panasonicjp.scene7.com/is/image/panasonicjp/NR-F60WX2-X_shomen_close?fmt=png-alpha&wid=600" alt="NR-F60WX2 正面（ステンレスシルバー）" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="mc-slide"><img src="https://panasonicjp.scene7.com/is/image/panasonicjp/NR-F60WX2-H_shomen_close?fmt=png-alpha&wid=600" alt="NR-F60WX2 正面（ハーモニーブラウン）" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="mc-slide"><img src="https://panasonicjp.scene7.com/is/image/panasonicjp/NR-F60WX2-X_shomen_open?fmt=png-alpha&wid=600" alt="NR-F60WX2 庫内全体" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="mc-slide"><img src="https://panasonicjp.scene7.com/is/image/panasonicjp/NR-F60WX2-X_yasai?fmt=png-alpha&wid=600" alt="NR-F60WX2 野菜室" loading="lazy" referrerpolicy="no-referrer"></div>
+                  </div></div>
+                  <button class="mc-btn mc-p" aria-label="前の画像">&#8249;</button>
+                  <button class="mc-btn mc-n" aria-label="次の画像">&#8250;</button>
+                  <div class="mc-dots">
+                    <button class="mc-dot active"></button>
+                    <button class="mc-dot"></button>
+                    <button class="mc-dot"></button>
+                    <button class="mc-dot"></button>
+                  </div>
+                </div>
                 <div class="model-name">NR-F60WX2<span class="model-year">2025</span></div>
                 <div class="link-badges">
                   <a class="lbadge lbadge-official" href="https://panasonic.jp/reizo/products/NR-F60WX2.html" target="_blank">🏠 公式サイト</a>
@@ -726,6 +870,20 @@
           <tbody>
             <tr>
               <td>
+                <div class="mc" data-i="0">
+                  <div class="mc-wrap"><div class="mc-track">
+                    <div class="mc-slide"><img src="https://www.mitsubishielectric.co.jp/home/reizouko/product/mr-wz61n/img/img_wz61n_white_close.png" alt="MR-WZ61N 正面（クリスタルホワイト）" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="mc-slide"><img src="https://www.mitsubishielectric.co.jp/home/reizouko/product/mr-wz61n/img/img_wz61n_gray_close.png" alt="MR-WZ61N 正面（グレイングレイン）" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="mc-slide"><img src="https://www.mitsubishielectric.co.jp/home/reizouko/product/mr-wz61n/img/img_wz61n_white_open.png" alt="MR-WZ61N 庫内全体（ドア開）" loading="lazy" referrerpolicy="no-referrer"></div>
+                  </div></div>
+                  <button class="mc-btn mc-p" aria-label="前の画像">&#8249;</button>
+                  <button class="mc-btn mc-n" aria-label="次の画像">&#8250;</button>
+                  <div class="mc-dots">
+                    <button class="mc-dot active"></button>
+                    <button class="mc-dot"></button>
+                    <button class="mc-dot"></button>
+                  </div>
+                </div>
                 <div class="model-name">MR-WZ61N<span class="model-year">2026</span></div>
                 <div class="link-badges">
                   <a class="lbadge lbadge-official" href="https://www.mitsubishielectric.co.jp/home/reizouko/product/mr-wz61n/" target="_blank">🏠 公式サイト</a>
@@ -746,6 +904,20 @@
             </tr>
             <tr>
               <td>
+                <div class="mc" data-i="0">
+                  <div class="mc-wrap"><div class="mc-track">
+                    <div class="mc-slide"><img src="https://www.mitsubishielectric.co.jp/home/reizouko/product/mr-wz61m/img/img_wz61m_white_close.png" alt="MR-WZ61M 正面（クリスタルホワイト）" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="mc-slide"><img src="https://www.mitsubishielectric.co.jp/home/reizouko/product/mr-wz61m/img/img_wz61m_gray_close.png" alt="MR-WZ61M 正面（グレイングレイン）" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="mc-slide"><img src="https://www.mitsubishielectric.co.jp/home/reizouko/product/mr-wz61m/img/img_wz61m_white_open.png" alt="MR-WZ61M 庫内（ドア開）" loading="lazy" referrerpolicy="no-referrer"></div>
+                  </div></div>
+                  <button class="mc-btn mc-p" aria-label="前の画像">&#8249;</button>
+                  <button class="mc-btn mc-n" aria-label="次の画像">&#8250;</button>
+                  <div class="mc-dots">
+                    <button class="mc-dot active"></button>
+                    <button class="mc-dot"></button>
+                    <button class="mc-dot"></button>
+                  </div>
+                </div>
                 <div class="model-name">MR-WZ61M<span class="model-year">2025</span></div>
                 <div class="link-badges">
                   <a class="lbadge lbadge-official" href="https://www.mitsubishielectric.co.jp/home/reizouko/product/mr-wz61m/" target="_blank">🏠 公式サイト</a>
@@ -820,6 +992,20 @@
           <tbody>
             <tr>
               <td>
+                <div class="mc" data-i="0">
+                  <div class="mc-wrap"><div class="mc-track">
+                    <div class="mc-slide"><img src="https://www.toshiba-lifestyle.com/sites/default/files/2025-02/gr-y640xfs_thumb_xk_01.jpg" alt="GR-Y640XFS 正面（サテンゴールド）" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="mc-slide"><img src="https://www.toshiba-lifestyle.com/sites/default/files/2025-02/gr-y640xfs_thumb_xk_02.jpg" alt="GR-Y640XFS 庫内全体" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="mc-slide"><img src="https://www.toshiba-lifestyle.com/sites/default/files/2025-02/gr-y640xfs_thumb_xk_03.jpg" alt="GR-Y640XFS 野菜室・特徴" loading="lazy" referrerpolicy="no-referrer"></div>
+                  </div></div>
+                  <button class="mc-btn mc-p" aria-label="前の画像">&#8249;</button>
+                  <button class="mc-btn mc-n" aria-label="次の画像">&#8250;</button>
+                  <div class="mc-dots">
+                    <button class="mc-dot active"></button>
+                    <button class="mc-dot"></button>
+                    <button class="mc-dot"></button>
+                  </div>
+                </div>
                 <div class="model-name">GR-Y640XFS<span class="model-year">2025</span></div>
                 <div class="link-badges">
                   <a class="lbadge lbadge-official" href="https://www.toshiba-lifestyle.com/jp/refrigerators/gr-y640xfs/" target="_blank">🏠 公式サイト</a>
@@ -843,6 +1029,20 @@
             </tr>
             <tr>
               <td>
+                <div class="mc" data-i="0">
+                  <div class="mc-wrap"><div class="mc-track">
+                    <div class="mc-slide"><img src="https://www.toshiba-lifestyle.com/sites/default/files/2025-03/gr-y600fh_thumb_ew_01.jpg" alt="GR-Y600FH 正面（エクリュホワイト）" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="mc-slide"><img src="https://www.toshiba-lifestyle.com/sites/default/files/2025-03/gr-y600fh_thumb_ew_02.jpg" alt="GR-Y600FH 庫内全体" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="mc-slide"><img src="https://www.toshiba-lifestyle.com/sites/default/files/2025-03/gr-y600fh_thumb_ew_03.jpg" alt="GR-Y600FH 特徴紹介" loading="lazy" referrerpolicy="no-referrer"></div>
+                  </div></div>
+                  <button class="mc-btn mc-p" aria-label="前の画像">&#8249;</button>
+                  <button class="mc-btn mc-n" aria-label="次の画像">&#8250;</button>
+                  <div class="mc-dots">
+                    <button class="mc-dot active"></button>
+                    <button class="mc-dot"></button>
+                    <button class="mc-dot"></button>
+                  </div>
+                </div>
                 <div class="model-name">GR-Y600FH<span class="model-year">2025</span></div>
                 <div class="link-badges">
                   <a class="lbadge lbadge-official" href="https://www.toshiba-lifestyle.com/jp/refrigerators/gr-y600fh/" target="_blank">🏠 公式サイト</a>
@@ -1272,6 +1472,20 @@
           <tbody>
             <tr>
               <td>
+                <div class="mc" data-i="0">
+                  <div class="mc-wrap"><div class="mc-track">
+                    <div class="mc-slide"><img src="https://www.lg.com/jp/images/refrigerators/GR-Q23FGNGL/gallery/medium/GR-Q23FGNGL-medium01.jpg" alt="GR-Q23FGNGL 正面（InstaView）" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="mc-slide"><img src="https://www.lg.com/jp/images/refrigerators/GR-Q23FGNGL/gallery/medium/GR-Q23FGNGL-medium02.jpg" alt="GR-Q23FGNGL InstaView ノック透視" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="mc-slide"><img src="https://www.lg.com/jp/images/refrigerators/GR-Q23FGNGL/gallery/medium/GR-Q23FGNGL-medium03.jpg" alt="GR-Q23FGNGL 庫内全体" loading="lazy" referrerpolicy="no-referrer"></div>
+                  </div></div>
+                  <button class="mc-btn mc-p" aria-label="前の画像">&#8249;</button>
+                  <button class="mc-btn mc-n" aria-label="次の画像">&#8250;</button>
+                  <div class="mc-dots">
+                    <button class="mc-dot active"></button>
+                    <button class="mc-dot"></button>
+                    <button class="mc-dot"></button>
+                  </div>
+                </div>
                 <div class="model-name">GR-Q23FGNGL<span class="model-year">2019</span></div>
                 <small>LG SIGNATURE</small>
                 <div class="link-badges">
@@ -1421,6 +1635,22 @@
           <tbody>
             <tr>
               <td>
+                <div class="mc" data-i="0">
+                  <div class="mc-wrap"><div class="mc-track">
+                    <div class="mc-slide"><img src="https://www.hisense.co.jp/refrigerator/hr-dch450kk/assets/img/mv-kk01.jpg" alt="HR-DCH450K 正面（シルキーブラック）" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="mc-slide"><img src="https://www.hisense.co.jp/refrigerator/hr-dch450kk/assets/img/mv-kw01.jpg" alt="HR-DCH450K 正面（オフホワイト）" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="mc-slide"><img src="https://www.hisense.co.jp/refrigerator/hr-dch450kk/assets/img/mv-kk02.jpg" alt="HR-DCH450K ぴたよせドア機能" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="mc-slide"><img src="https://www.hisense.co.jp/refrigerator/hr-dch450kk/assets/img/mv-kk03.jpg" alt="HR-DCH450K 庫内・セレクトチルド" loading="lazy" referrerpolicy="no-referrer"></div>
+                  </div></div>
+                  <button class="mc-btn mc-p" aria-label="前の画像">&#8249;</button>
+                  <button class="mc-btn mc-n" aria-label="次の画像">&#8250;</button>
+                  <div class="mc-dots">
+                    <button class="mc-dot active"></button>
+                    <button class="mc-dot"></button>
+                    <button class="mc-dot"></button>
+                    <button class="mc-dot"></button>
+                  </div>
+                </div>
                 <div class="model-name">HR-DCH450K<span class="model-year">2025</span></div>
                 <small>ハイグレード</small>
                 <div class="link-badges">
@@ -1442,6 +1672,18 @@
             </tr>
             <tr>
               <td>
+                <div class="mc" data-i="0">
+                  <div class="mc-wrap"><div class="mc-track">
+                    <div class="mc-slide"><img src="https://www.hisense.co.jp/refrigerator/hr-dc450kw/assets/img/mv-kw01.jpg" alt="HR-DC450K 正面（オフホワイト）" loading="lazy" referrerpolicy="no-referrer"></div>
+                    <div class="mc-slide"><img src="https://www.hisense.co.jp/refrigerator/hr-dc450kw/assets/img/mv-kw02.jpg" alt="HR-DC450K ぴたよせドア・底面排熱" loading="lazy" referrerpolicy="no-referrer"></div>
+                  </div></div>
+                  <button class="mc-btn mc-p" aria-label="前の画像">&#8249;</button>
+                  <button class="mc-btn mc-n" aria-label="次の画像">&#8250;</button>
+                  <div class="mc-dots">
+                    <button class="mc-dot active"></button>
+                    <button class="mc-dot"></button>
+                  </div>
+                </div>
                 <div class="model-name">HR-DC450K<span class="model-year">2025</span></div>
                 <small>スタンダード</small>
                 <div class="link-badges">
@@ -1565,6 +1807,131 @@
   <p>調査日：2026年4月12日 ／ 価格は参考値（最安価格〜メーカー希望小売価格）。実際の価格は各販売店でご確認ください。</p>
   <p style="margin-top:6px;">参考：<a href="https://my-best.com/18025" target="_blank" style="color:var(--blue);">マイベスト 600L台冷蔵庫ランキング</a> ／ <a href="https://kakaku.com/kaden/freezer/" target="_blank" style="color:var(--blue);">価格.com 冷蔵庫</a> ／ <a href="https://fridge.rank-king.jp/article/205" target="_blank" style="color:var(--blue);">ランク王 600L以上大型冷蔵庫</a> ／ <a href="https://getnavi.jp/appliances/1035229/" target="_blank" style="color:var(--blue);">GetNavi ハイセンス450L</a> ／ <a href="https://smhn.info/202508-hitachi-samsung" target="_blank" style="color:var(--blue);">すまほん!! Samsung日立買収報道</a></p>
 </div>
+
+
+<!-- ===== ライトボックス オーバーレイ ===== -->
+<div id="lb-overlay" role="dialog" aria-modal="true" aria-label="画像ビューア">
+  <button id="lb-close" class="lb-close" aria-label="閉じる">&#10005;</button>
+  <button id="lb-prev" class="lb-nav-btn" aria-label="前の画像">&#8249;</button>
+  <img id="lb-img" src="" alt="">
+  <button id="lb-next" class="lb-nav-btn" aria-label="次の画像">&#8250;</button>
+  <div id="lb-cap"></div>
+  <div id="lb-count"></div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ---- カルーセル初期化 ---- */
+  function initCarousels() {
+    document.querySelectorAll('.mc').forEach(function (mc) {
+      var track  = mc.querySelector('.mc-track');
+      var slides = mc.querySelectorAll('.mc-slide');
+      var dots   = mc.querySelectorAll('.mc-dot');
+      var n = slides.length;
+      if (n < 1) return;
+      var cur = 0;
+
+      function goTo(to) {
+        cur = ((to % n) + n) % n;
+        track.style.transform = 'translateX(-' + (cur * 100) + '%)';
+        dots.forEach(function (d, j) { d.classList.toggle('active', j === cur); });
+      }
+
+      var btnP = mc.querySelector('.mc-p');
+      var btnN = mc.querySelector('.mc-n');
+      if (btnP) btnP.addEventListener('click', function () { goTo(cur - 1); });
+      if (btnN) btnN.addEventListener('click', function () { goTo(cur + 1); });
+      dots.forEach(function (d, j) { d.addEventListener('click', function () { goTo(j); }); });
+
+      /* タッチスワイプ */
+      var swipeStartX = 0;
+      mc.addEventListener('touchstart', function (e) { swipeStartX = e.touches[0].clientX; }, { passive: true });
+      mc.addEventListener('touchend',   function (e) {
+        var dx = e.changedTouches[0].clientX - swipeStartX;
+        if (Math.abs(dx) > 40) goTo(dx < 0 ? cur + 1 : cur - 1);
+      }, { passive: true });
+
+      /* 画像クリックでライトボックスを開く */
+      slides.forEach(function (slide, idx) {
+        var img = slide.querySelector('img');
+        if (img) img.addEventListener('click', function () { openLightbox(mc, idx); });
+      });
+    });
+  }
+
+  /* ---- ライトボックス ---- */
+  var overlay  = document.getElementById('lb-overlay');
+  var lbImg    = document.getElementById('lb-img');
+  var lbCap    = document.getElementById('lb-cap');
+  var lbCount  = document.getElementById('lb-count');
+  var lbClose  = document.getElementById('lb-close');
+  var lbPrev   = document.getElementById('lb-prev');
+  var lbNext   = document.getElementById('lb-next');
+  var lbImages = [];
+  var lbIdx    = 0;
+
+  function openLightbox(mc, startIdx) {
+    lbImages = [];
+    mc.querySelectorAll('.mc-slide img').forEach(function (img) {
+      lbImages.push({ src: img.src, alt: img.alt });
+    });
+    if (!lbImages.length) return;
+    lbIdx = startIdx || 0;
+    renderLightbox();
+    overlay.classList.add('lb-open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function renderLightbox() {
+    var item = lbImages[lbIdx];
+    lbImg.src = item.src;
+    lbImg.alt = item.alt;
+    lbCap.textContent   = item.alt;
+    lbCount.textContent = (lbIdx + 1) + ' / ' + lbImages.length;
+    var multi = lbImages.length > 1;
+    lbPrev.style.display = multi ? '' : 'none';
+    lbNext.style.display = multi ? '' : 'none';
+  }
+
+  function closeLightbox() {
+    overlay.classList.remove('lb-open');
+    document.body.style.overflow = '';
+  }
+
+  if (lbClose) lbClose.addEventListener('click', closeLightbox);
+  if (lbPrev)  lbPrev.addEventListener('click',  function () { lbIdx = (lbIdx - 1 + lbImages.length) % lbImages.length; renderLightbox(); });
+  if (lbNext)  lbNext.addEventListener('click',  function () { lbIdx = (lbIdx + 1) % lbImages.length; renderLightbox(); });
+  if (overlay) overlay.addEventListener('click', function (e) { if (e.target === overlay) closeLightbox(); });
+
+  /* キーボード操作 */
+  document.addEventListener('keydown', function (e) {
+    if (!overlay || !overlay.classList.contains('lb-open')) return;
+    if (e.key === 'Escape')      { closeLightbox(); }
+    if (e.key === 'ArrowLeft')   { lbIdx = (lbIdx - 1 + lbImages.length) % lbImages.length; renderLightbox(); }
+    if (e.key === 'ArrowRight')  { lbIdx = (lbIdx + 1) % lbImages.length; renderLightbox(); }
+  });
+
+  /* ライトボックス内スワイプ */
+  var lbSwipeX = 0;
+  if (overlay) {
+    overlay.addEventListener('touchstart', function (e) { lbSwipeX = e.touches[0].clientX; }, { passive: true });
+    overlay.addEventListener('touchend',   function (e) {
+      var dx = e.changedTouches[0].clientX - lbSwipeX;
+      if (Math.abs(dx) > 40) {
+        lbIdx = dx < 0
+          ? (lbIdx + 1) % lbImages.length
+          : (lbIdx - 1 + lbImages.length) % lbImages.length;
+        renderLightbox();
+      }
+    }, { passive: true });
+  }
+
+  /* 初期化実行 */
+  initCarousels();
+})();
+</script>
 
 </body>
 </html>
