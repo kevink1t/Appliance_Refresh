@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>600L級冷蔵庫 最新動向・おすすめガイド 2025-2026</title>
+  <style>
+    /* ========== リセット & ベース ========== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #f4f6f9;
+      --surface:   #ffffff;
+      --border:    #e2e8f0;
+      --text-main: #1a202c;
+      --text-sub:  #4a5568;
+      --text-muted:#718096;
+      --blue:      #2563eb;
+      --blue-light:#eff6ff;
+      --green:     #16a34a;
+      --green-light:#f0fdf4;
+      --amber:     #d97706;
+      --amber-light:#fffbeb;
+      --red:       #dc2626;
+      --red-light: #fef2f2;
+      --purple:    #7c3aed;
+      --purple-light:#f5f3ff;
+      --teal:      #0d9488;
+      --teal-light:#f0fdfa;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,.08);
+      --shadow-md: 0 4px 12px rgba(0,0,0,.10);
+      --shadow-lg: 0 8px 24px rgba(0,0,0,.12);
+      --radius:    12px;
+    }
+
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP",
+                   "Yu Gothic", Meiryo, sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    /* ========== レイアウト ========== */
+    .wrapper { max-width: 1120px; margin: 0 auto; padding: 0 20px 80px; }
+
+    /* ========== ヘッダー ========== */
+    .hero {
+      background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 50%, #0d9488 100%);
+      color: #fff;
+      padding: 60px 40px 50px;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .hero .badge {
+      display: inline-block;
+      background: rgba(255,255,255,.2);
+      border: 1px solid rgba(255,255,255,.4);
+      border-radius: 20px;
+      padding: 4px 16px;
+      font-size: 13px;
+      letter-spacing: .05em;
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-size: clamp(24px, 4vw, 40px);
+      font-weight: 800;
+      letter-spacing: -.01em;
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+    .hero p {
+      font-size: 16px;
+      opacity: .88;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    /* ========== セクション見出し ========== */
+    .section-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin: 56px 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-title::before {
+      content: "";
+      width: 5px;
+      height: 28px;
+      background: linear-gradient(180deg, var(--blue), var(--teal));
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    /* ========== トレンドカード ========== */
+    .trend-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+    .trend-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+    }
+    .trend-card .icon {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    .trend-card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--blue);
+    }
+    .trend-card p { font-size: 14px; color: var(--text-sub); line-height: 1.65; }
+
+    /* ========== メーカー別カード ========== */
+    .maker-section { margin-bottom: 40px; }
+
+    .maker-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 20px 24px;
+      border-radius: var(--radius) var(--radius) 0 0;
+      color: #fff;
+    }
+    .maker-header .maker-name { font-size: 20px; font-weight: 800; }
+    .maker-header .maker-tagline { font-size: 13px; opacity: .88; }
+
+    .maker-hitachi .maker-header   { background: linear-gradient(135deg, #c0392b, #e74c3c); }
+    .maker-panasonic .maker-header { background: linear-gradient(135deg, #1565c0, #1976d2); }
+    .maker-mitsubishi .maker-header { background: linear-gradient(135deg, #e53935, #ef5350); }
+    .maker-toshiba .maker-header   { background: linear-gradient(135deg, #00695c, #009688); }
+    .maker-sharp .maker-header     { background: linear-gradient(135deg, #6a1b9a, #8e24aa); }
+
+    .maker-body {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-top: none;
+      border-radius: 0 0 var(--radius) var(--radius);
+      padding: 28px 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .maker-overview {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+    @media (max-width: 640px) { .maker-overview { grid-template-columns: 1fr; } }
+
+    .pro-con-box { background: var(--bg); border-radius: 8px; padding: 16px 18px; }
+    .pro-con-box h4 {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: 10px;
+    }
+    .pro-con-box.pros h4 { color: var(--green); }
+    .pro-con-box.cons h4 { color: var(--red); }
+
+    .pro-con-box ul { list-style: none; }
+    .pro-con-box ul li {
+      font-size: 13.5px;
+      color: var(--text-sub);
+      padding: 3px 0;
+      padding-left: 18px;
+      position: relative;
+    }
+    .pro-con-box.pros ul li::before { content: "✓"; color: var(--green); position: absolute; left: 0; font-weight: 700; }
+    .pro-con-box.cons ul li::before { content: "✗"; color: var(--red); position: absolute; left: 0; font-weight: 700; }
+
+    /* モデルテーブル */
+    .model-table-wrap { overflow-x: auto; margin-top: 4px; }
+    .model-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+    }
+    .model-table th {
+      background: var(--bg);
+      color: var(--text-sub);
+      font-weight: 700;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+    .model-table td {
+      padding: 13px 14px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-sub);
+      vertical-align: top;
+    }
+    .model-table tr:last-child td { border-bottom: none; }
+    .model-table tr:hover td { background: #fafbfc; }
+    .model-name { font-weight: 700; color: var(--text-main); font-size: 14px; }
+    .model-year {
+      display: inline-block;
+      background: var(--blue-light);
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 10px;
+      margin-left: 6px;
+    }
+    .price-high { color: var(--red); font-weight: 700; }
+    .price-mid  { color: var(--amber); font-weight: 700; }
+    .price-low  { color: var(--green); font-weight: 700; }
+
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 11px;
+      font-weight: 700;
+      margin: 2px 2px 2px 0;
+    }
+    .tag-blue   { background: var(--blue-light);   color: var(--blue); }
+    .tag-green  { background: var(--green-light);  color: var(--green); }
+    .tag-amber  { background: var(--amber-light);  color: var(--amber); }
+    .tag-red    { background: var(--red-light);    color: var(--red); }
+    .tag-purple { background: var(--purple-light); color: var(--purple); }
+    .tag-teal   { background: var(--teal-light);   color: var(--teal); }
+
+    /* ========== 総合比較表 ========== */
+    .compare-wrap { overflow-x: auto; }
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      background: var(--surface);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+    .compare-table th {
+      padding: 14px 12px;
+      background: #1e3a5f;
+      color: #fff;
+      font-size: 12px;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .compare-table th:first-child { text-align: left; padding-left: 20px; min-width: 140px; }
+    .compare-table td {
+      padding: 12px;
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+      vertical-align: middle;
+    }
+    .compare-table td:first-child { text-align: left; padding-left: 20px; font-weight: 700; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fafbfc; }
+    .star { color: #f59e0b; font-size: 15px; }
+    .star-empty { color: #d1d5db; font-size: 15px; }
+
+    /* ========== ランキングカード ========== */
+    .ranking-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+    }
+    .rank-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+    }
+    .rank-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 900;
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,.2);
+    }
+    .rank-1 .rank-badge { background: linear-gradient(135deg,#f59e0b,#d97706); }
+    .rank-2 .rank-badge { background: linear-gradient(135deg,#94a3b8,#64748b); }
+    .rank-3 .rank-badge { background: linear-gradient(135deg,#c0844a,#a0693a); }
+    .rank-4 .rank-badge, .rank-5 .rank-badge { background: linear-gradient(135deg,#6366f1,#4f46e5); }
+
+    .rank-card-header { padding: 20px 20px 16px 72px; background: var(--bg); }
+    .rank-card-header .model-title { font-size: 17px; font-weight: 800; line-height: 1.3; }
+    .rank-card-header .model-sub   { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+    .rank-card-body { padding: 16px 20px 20px; }
+    .rank-price { font-size: 22px; font-weight: 900; color: var(--blue); margin-bottom: 12px; }
+    .rank-price span { font-size: 13px; font-weight: 400; color: var(--text-muted); }
+    .rank-features { font-size: 13.5px; color: var(--text-sub); line-height: 1.7; }
+    .rank-verdict {
+      margin-top: 14px;
+      padding: 10px 14px;
+      background: var(--blue-light);
+      border-left: 3px solid var(--blue);
+      border-radius: 0 6px 6px 0;
+      font-size: 13px;
+      color: var(--blue);
+      font-weight: 600;
+    }
+
+    /* ========== 選び方ガイド ========== */
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .guide-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+    }
+    .guide-card .num {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--blue), var(--teal));
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+    .guide-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+    .guide-card p  { font-size: 13.5px; color: var(--text-sub); line-height: 1.65; }
+
+    /* ========== フッター ========== */
+    .footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 12px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      margin-top: 64px;
+    }
+
+    /* ========== 注意書きボックス ========== */
+    .notice {
+      background: var(--amber-light);
+      border: 1px solid #fbbf24;
+      border-radius: 8px;
+      padding: 14px 18px;
+      font-size: 13px;
+      color: #92400e;
+      margin-bottom: 28px;
+    }
+    .notice strong { color: var(--amber); }
+
+    /* ========== 価格帯バー ========== */
+    .price-band {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 6px;
+      font-size: 13px;
+    }
+    .price-band-bar {
+      flex: 1;
+      height: 8px;
+      background: var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .price-band-fill {
+      height: 100%;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== ヒーロー ===== -->
+<div class="hero">
+  <div class="badge">2025–2026年 最新版</div>
+  <h1>600L級 冷蔵庫<br>完全購入ガイド</h1>
+  <p>日立・パナソニック・三菱電機・東芝を徹底比較。<br>最新動向・機能・価格帯・メリット&デメリットをすべて解説します。</p>
+</div>
+
+<div class="wrapper">
+
+  <!-- ===== 市場動向 ===== -->
+  <h2 class="section-title">2025–2026年 市場動向</h2>
+
+  <div class="trend-grid">
+    <div class="trend-card">
+      <div class="icon">🧊</div>
+      <h3>AI・IoT機能が標準化</h3>
+      <p>AIがライフスタイルを学習して省エネ運転を自動最適化。スマートフォン連携アプリでの食材管理・レシピ提案が主要メーカー全社で搭載され始めた。</p>
+    </div>
+    <div class="trend-card">
+      <div class="icon">⚡</div>
+      <h3>電気代高騰で省エネ競争激化</h3>
+      <p>年間電気代8,000円台を実現するモデルが登場。真空断熱材の進化・AIエコナビ・太陽光連携機能により、大型モデルでも小型より電気代が安い逆転現象が起きている。</p>
+    </div>
+    <div class="trend-card">
+      <div class="icon">📐</div>
+      <h3>薄壁化で「同サイズでも大容量」</h3>
+      <p>東芝が最大40%薄壁化技術を投入し、設置サイズを変えずに容積を大幅拡大。パナソニック・シャープも奥行き63cm前後の薄型設計を強化中。</p>
+    </div>
+    <div class="trend-card">
+      <div class="icon">❄️</div>
+      <h3>冷凍機能の高度化</h3>
+      <p>「切れちゃう瞬冷凍（三菱）」「はやうま冷凍（パナソニック）」「デリシャス冷凍（日立）」など各社が独自の高品質冷凍技術を競い合い、家庭での作り置き・まとめ買い需要に応える。</p>
+    </div>
+    <div class="trend-card">
+      <div class="icon">🍃</div>
+      <h3>鮮度保持技術の進化</h3>
+      <p>真空チルド・ナノイーX・プラズマクラスター・うるおい冷気など、チルド室・野菜室の鮮度管理が高度化。食品ロス削減への意識の高まりと合致し、各社の重点機能となっている。</p>
+    </div>
+    <div class="trend-card">
+      <div class="icon">✨</div>
+      <h3>フルフラットガラスドアがトレンド</h3>
+      <p>インテリア性を重視するユーザーに向け、継ぎ目のないフルフラットガラスドアが上位モデルの標準装備に。ミラー加工・フロスト加工など仕上げのバリエーションも増加。</p>
+    </div>
+  </div>
+
+  <div class="notice" style="margin-top:24px;">
+    <strong>価格について：</strong>記載の価格は2025年4月時点の参考値（最安価格〜メーカー希望小売価格の範囲）です。実際の価格は販売店・時期により異なります。購入前は価格.comや各販売店でご確認ください。
+  </div>
+
+
+  <!-- ===== 日立 ===== -->
+  <h2 class="section-title">メーカー別 詳細レポート</h2>
+
+  <!-- 日立 -->
+  <div class="maker-section maker-hitachi">
+    <div class="maker-header">
+      <div>
+        <div class="maker-name">🔴 日立（HITACHI）</div>
+        <div class="maker-tagline">「真空チルド」と「まるごとチルド」で鮮度と冷凍力を両立</div>
+      </div>
+    </div>
+    <div class="maker-body">
+      <div class="maker-overview">
+        <div class="pro-con-box pros">
+          <h4>メリット（強み）</h4>
+          <ul>
+            <li>真空チルド（約0.8気圧）で肉・魚の鮮度を長期維持</li>
+            <li>冷蔵室全段をチルド温度で保冷できる「まるごとチルド」</li>
+            <li>AIカメラで庫内食材を記録・管理（HWC62X）</li>
+            <li>AI節電機能で生活パターンに合わせて自動省エネ</li>
+            <li>霜ブロック機能で冷凍食品の品質劣化を防止</li>
+            <li>617L大容量でまとめ買いにも対応</li>
+          </ul>
+        </div>
+        <div class="pro-con-box cons">
+          <h4>デメリット（注意点）</h4>
+          <ul>
+            <li>上位モデルは35〜39万円台と高額</li>
+            <li>奥行きが深く、奥の食材が取り出しにくい場合がある</li>
+            <li>野菜室・冷凍室がフルオープン非対応のモデルあり</li>
+            <li>棚の高さ調整に手間がかかるという意見あり</li>
+            <li>真空チルドは真空状態を保つために庫内が狭くなる</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="model-table-wrap">
+        <table class="model-table">
+          <thead>
+            <tr>
+              <th>モデル名</th>
+              <th>容量</th>
+              <th>幅</th>
+              <th>価格帯（参考）</th>
+              <th>主な特徴・機能</th>
+              <th>グレード</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="model-name">R-HXCC62X-X<span class="model-year">2025</span></div>
+              </td>
+              <td>617 L</td>
+              <td>68.5 cm</td>
+              <td><span class="price-high">¥368,000〜¥390,000</span></td>
+              <td>
+                <span class="tag tag-red">真空チルド</span>
+                <span class="tag tag-blue">AIカメラ</span>
+                <span class="tag tag-green">AI節電</span>
+                <span class="tag tag-amber">霜ブロック</span>
+                <span class="tag tag-teal">収納特化</span>
+                <br><small>収納効率最大化・デリシャス冷凍・新鮮スリープ野菜室</small>
+              </td>
+              <td><span class="tag tag-red">最上位</span></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="model-name">R-HXC62X<span class="model-year">2025</span></div>
+              </td>
+              <td>617 L</td>
+              <td>68.5 cm</td>
+              <td><span class="price-high">¥327,800〜¥364,000</span></td>
+              <td>
+                <span class="tag tag-red">真空チルド</span>
+                <span class="tag tag-green">AI節電</span>
+                <span class="tag tag-amber">エチレン除去</span>
+                <br><small>チルド・パーシャル室低温安定・野菜エチレンガス除去</small>
+              </td>
+              <td><span class="tag tag-blue">上位</span></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="model-name">R-HWC62X<span class="model-year">2025</span></div>
+              </td>
+              <td>617 L</td>
+              <td>68.5 cm</td>
+              <td><span class="price-mid">¥221,921〜¥304,000</span></td>
+              <td>
+                <span class="tag tag-blue">AIカメラ</span>
+                <span class="tag tag-green">まるごとチルド</span>
+                <span class="tag tag-amber">AI節電</span>
+                <br><small>AIカメラで食材記録・全段チルド保存・静音設計</small>
+              </td>
+              <td><span class="tag tag-teal">中上位</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- パナソニック -->
+  <div class="maker-section maker-panasonic">
+    <div class="maker-header">
+      <div>
+        <div class="maker-name">🔵 パナソニック（Panasonic）</div>
+        <div class="maker-tagline">ナノイーX・フルオープン・はやうま冷凍でトータル性能のバランス重視</div>
+      </div>
+    </div>
+    <div class="maker-body">
+      <div class="maker-overview">
+        <div class="pro-con-box pros">
+          <h4>メリット（強み）</h4>
+          <ul>
+            <li>ナノイーX搭載で除菌・脱臭・鮮度保持を同時実現</li>
+            <li>冷凍室・野菜室がフルオープン（100%引き出し可能）</li>
+            <li>はやうま冷凍で食材の細胞損傷を抑えた高品質冷凍</li>
+            <li>AIエコナビ＋IoTひとセンサーで自動省エネ運転</li>
+            <li>フルフラットガラスドアで高級感あるデザイン</li>
+            <li>スマホ連携アプリでレシピ提案・食材管理が可能</li>
+          </ul>
+        </div>
+        <div class="pro-con-box cons">
+          <h4>デメリット（注意点）</h4>
+          <ul>
+            <li>NR-F65WX2は幅75cmと広く、設置スペースを確認要</li>
+            <li>上位モデルは35〜40万円台と高価格帯</li>
+            <li>日立の真空チルドのような「真空状態」での保存機能はなし</li>
+            <li>三菱の「切れちゃう瞬冷凍」のような氷点下保存に特化した機能はない</li>
+            <li>野菜室は三菱と比較してやや特化度が低い</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="model-table-wrap">
+        <table class="model-table">
+          <thead>
+            <tr>
+              <th>モデル名</th>
+              <th>容量</th>
+              <th>幅</th>
+              <th>価格帯（参考）</th>
+              <th>主な特徴・機能</th>
+              <th>グレード</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="model-name">NR-F65WX2<span class="model-year">2025</span></div>
+              </td>
+              <td>650 L</td>
+              <td>75.0 cm</td>
+              <td><span class="price-high">¥346,500〜¥389,642</span></td>
+              <td>
+                <span class="tag tag-blue">ナノイーX</span>
+                <span class="tag tag-green">フルオープン</span>
+                <span class="tag tag-amber">はやうま冷凍</span>
+                <span class="tag tag-teal">AIエコナビ</span>
+                <span class="tag tag-purple">ガラスドア</span>
+                <br><small>最大容量モデル・霜つき抑制冷凍・IoTひとセンサー</small>
+              </td>
+              <td><span class="tag tag-red">最上位</span></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="model-name">NR-F60WX2<span class="model-year">2025</span></div>
+              </td>
+              <td>601 L</td>
+              <td>68.5 cm</td>
+              <td><span class="price-high">¥326,699〜¥376,200</span></td>
+              <td>
+                <span class="tag tag-blue">ナノイーX</span>
+                <span class="tag tag-green">フルオープン</span>
+                <span class="tag tag-amber">はやうま冷凍</span>
+                <span class="tag tag-teal">AIエコナビ</span>
+                <span class="tag tag-purple">ガラスドア</span>
+                <br><small>標準幅68.5cmで600L達成・フルフラットガラス・霜つき抑制</small>
+              </td>
+              <td><span class="tag tag-blue">上位</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- 三菱電機 -->
+  <div class="maker-section maker-mitsubishi">
+    <div class="maker-header">
+      <div>
+        <div class="maker-name">🔴 三菱電機（Mitsubishi Electric）</div>
+        <div class="maker-tagline">「切れちゃう瞬冷凍A.I.」と高い静音性でシェフレベルの冷凍保存</div>
+      </div>
+    </div>
+    <div class="maker-body">
+      <div class="maker-overview">
+        <div class="pro-con-box pros">
+          <h4>メリット（強み）</h4>
+          <ul>
+            <li>切れちゃう瞬冷凍A.I.で約−7℃の軟冷凍（解凍不要で使える）</li>
+            <li>できちゃうV冷凍で冷凍野菜を好みのサイズに調整可能</li>
+            <li>独立チルド室＋パーシャル室で生鮮食品の鮮度を最大化</li>
+            <li>業界最高水準の静音性（約15dB(A)）</li>
+            <li>MR-WZ61N：年間電気代約8,463円と省エネ性能が高い</li>
+            <li>冷蔵室の収納効率が高く「中だけひろびろ大容量」設計</li>
+          </ul>
+        </div>
+        <div class="pro-con-box cons">
+          <h4>デメリット（注意点）</h4>
+          <ul>
+            <li>パナソニックのようなフルオープン引き出しではないモデルあり</li>
+            <li>AIカメラによる食材管理機能は非搭載（競合比）</li>
+            <li>冷凍室の段数がやや少ない構成のモデルがある</li>
+            <li>最新モデル（MR-WZ61N）の市場価格がまだ安定していない</li>
+            <li>デザインが他社と比べてシンプルに感じる人もいる</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="model-table-wrap">
+        <table class="model-table">
+          <thead>
+            <tr>
+              <th>モデル名</th>
+              <th>容量</th>
+              <th>幅</th>
+              <th>価格帯（参考）</th>
+              <th>主な特徴・機能</th>
+              <th>グレード</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="model-name">MR-WZ61N<span class="model-year">2026</span></div>
+              </td>
+              <td>610 L</td>
+              <td>68.5 cm</td>
+              <td><span class="price-high">¥280,000〜¥360,000</span></td>
+              <td>
+                <span class="tag tag-red">瞬冷凍A.I.</span>
+                <span class="tag tag-blue">スマホ連携</span>
+                <span class="tag tag-green">省エネ（年8,463円）</span>
+                <span class="tag tag-teal">フルオープン</span>
+                <span class="tag tag-amber">タッチパネル</span>
+                <br><small>2026年2月最新・できちゃうV冷凍・独立チルド＆パーシャル</small>
+              </td>
+              <td><span class="tag tag-red">最新上位</span></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="model-name">MR-WZ61M<span class="model-year">2025</span></div>
+              </td>
+              <td>608 L</td>
+              <td>68.5 cm</td>
+              <td><span class="price-mid">¥230,000〜¥300,000</span></td>
+              <td>
+                <span class="tag tag-red">瞬冷凍A.I.</span>
+                <span class="tag tag-blue">氷点下ストッカーD</span>
+                <span class="tag tag-green">できちゃうV冷凍</span>
+                <span class="tag tag-teal">15dB静音</span>
+                <br><small>2025年1月発売・独立チルド＋パーシャル・冷凍室3段構造</small>
+              </td>
+              <td><span class="tag tag-blue">上位</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- 東芝 -->
+  <div class="maker-section maker-toshiba">
+    <div class="maker-header">
+      <div>
+        <div class="maker-name">🟢 東芝（TOSHIBA VEGETA）</div>
+        <div class="maker-tagline">「摘みたて野菜室」と薄壁化技術で野菜の鮮度と大容量を両立</div>
+      </div>
+    </div>
+    <div class="maker-body">
+      <div class="maker-overview">
+        <div class="pro-con-box pros">
+          <h4>メリット（強み）</h4>
+          <ul>
+            <li>特許技術「摘みたて野菜室」で野菜がシャキッと長持ち</li>
+            <li>独自の薄壁化技術（最大40%）で同サイズでも容積が大</li>
+            <li>GR-Y640XFSで643L達成しながら幅68.5cm設計</li>
+            <li>Deliチルド搭載で約7日間おいしく保存（作り置きに最適）</li>
+            <li>フリー棚40通りのレイアウトで収納自由度が高い</li>
+            <li>省エネ大賞受賞実績あり・高い省エネ性能</li>
+          </ul>
+        </div>
+        <div class="pro-con-box cons">
+          <h4>デメリット（注意点）</h4>
+          <ul>
+            <li>三菱のような「軟冷凍」機能（解凍不要）はなし</li>
+            <li>日立のAIカメラ搭載モデルのような食材管理機能が弱い</li>
+            <li>GR-Y640XFSは重量135kgと重い（搬入経路の確認要）</li>
+            <li>スタンダードモデル（GR-Y600FH）は機能がやや絞られる</li>
+            <li>デザインが競合と比べてやや地味という意見もある</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="model-table-wrap">
+        <table class="model-table">
+          <thead>
+            <tr>
+              <th>モデル名</th>
+              <th>容量</th>
+              <th>幅</th>
+              <th>価格帯（参考）</th>
+              <th>主な特徴・機能</th>
+              <th>グレード</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="model-name">GR-Y640XFS<span class="model-year">2025</span></div>
+              </td>
+              <td>643 L</td>
+              <td>68.5 cm</td>
+              <td><span class="price-high">¥300,000〜¥341,000</span></td>
+              <td>
+                <span class="tag tag-teal">摘みたて野菜室</span>
+                <span class="tag tag-blue">Deliチルド</span>
+                <span class="tag tag-green">薄壁化技術</span>
+                <span class="tag tag-amber">フリー棚40通り</span>
+                <span class="tag tag-purple">3WAYチルド</span>
+                <br><small>643L大容量・3段冷凍室・IoLIFEアプリ対応・省エネ</small>
+              </td>
+              <td><span class="tag tag-red">最上位</span></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="model-name">GR-Y600FH<span class="model-year">2025</span></div>
+              </td>
+              <td>601 L</td>
+              <td>68.5 cm</td>
+              <td><span class="price-low">¥185,080〜¥254,195</span></td>
+              <td>
+                <span class="tag tag-teal">うるおい冷気</span>
+                <span class="tag tag-blue">速鮮チルド</span>
+                <span class="tag tag-green">解凍モード</span>
+                <br><small>コスパ重視スタンダード・うるおい冷気で乾燥防止・2段式チルド</small>
+              </td>
+              <td><span class="tag tag-teal">スタンダード上位</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- シャープ -->
+  <div class="maker-section maker-sharp">
+    <div class="maker-header">
+      <div>
+        <div class="maker-name">🟣 シャープ（SHARP）</div>
+        <div class="maker-tagline">プラズマクラスター搭載・薄型奥行63cm設計が強み（600L超モデルは現時点なし）</div>
+      </div>
+    </div>
+    <div class="maker-body">
+      <div class="maker-overview">
+        <div class="pro-con-box pros">
+          <h4>メリット（強み）</h4>
+          <ul>
+            <li>プラズマクラスターで庫内を除菌・脱臭・カビ抑制</li>
+            <li>奥行き63cmの業界最薄水準設計でキッチンに置きやすい</li>
+            <li>メガフリーザーで冷凍食品を大容量かつ整理しやすく収納</li>
+            <li>クラウドAIが最大35%節電を実現（Fit63シリーズ）</li>
+            <li>太陽光発電システムとの連携対応</li>
+          </ul>
+        </div>
+        <div class="pro-con-box cons">
+          <h4>デメリット（注意点）</h4>
+          <ul>
+            <li>家庭用フレンチドアの最大モデルが545L（2025年）で600L超なし</li>
+            <li>日立・パナソニック・三菱の600L級と直接比較できない</li>
+            <li>真空チルドや切れちゃう冷凍のような特化機能は非搭載</li>
+            <li>600Lを求めるなら他メーカーから選ぶ必要がある</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="model-table-wrap">
+        <table class="model-table">
+          <thead>
+            <tr>
+              <th>モデル名</th>
+              <th>容量</th>
+              <th>幅</th>
+              <th>価格帯（参考）</th>
+              <th>主な特徴・機能</th>
+              <th>備考</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="model-name">SJ-MF55P<span class="model-year">2025</span></div>
+              </td>
+              <td>545 L</td>
+              <td>63.0 cm</td>
+              <td><span class="price-mid">¥220,000〜¥280,000</span>（参考）</td>
+              <td>
+                <span class="tag tag-purple">プラズマクラスター</span>
+                <span class="tag tag-green">クラウドAI省エネ</span>
+                <span class="tag tag-blue">メガフリーザー</span>
+                <span class="tag tag-amber">太陽光連携</span>
+                <br><small>Fit63シリーズ最大容量・奥行63cm薄型・2025年2月発売</small>
+              </td>
+              <td><span class="tag tag-amber">600L未満</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="margin-top:14px; font-size:13px; color:var(--text-muted);">
+        ※ シャープの家庭用フレンチドア冷蔵庫は2025年時点で最大545L。600L級を求める場合は日立・パナソニック・三菱電機・東芝から選んでください。シャープの「SJ-60H」（600L）はコストコ向け2ドアモデルで、家庭向け6ドア製品とは性格が異なります。
+      </p>
+    </div>
+  </div>
+
+
+  <!-- ===== 総合比較表 ===== -->
+  <h2 class="section-title">主要機能 総合比較表</h2>
+
+  <div class="compare-wrap">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>評価項目</th>
+          <th>日立<br>R-HXCC62X</th>
+          <th>パナソニック<br>NR-F60WX2</th>
+          <th>三菱電機<br>MR-WZ61N</th>
+          <th>東芝<br>GR-Y640XFS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>最大容量</td>
+          <td>617 L</td>
+          <td>601 L<br><small>（F65WX2は650L）</small></td>
+          <td>610 L</td>
+          <td>643 L</td>
+        </tr>
+        <tr>
+          <td>本体幅</td>
+          <td>68.5 cm</td>
+          <td>68.5 cm<br><small>（F65WX2は75cm）</small></td>
+          <td>68.5 cm</td>
+          <td>68.5 cm</td>
+        </tr>
+        <tr>
+          <td>参考価格（税込）</td>
+          <td>¥368,000〜<br>¥390,000</td>
+          <td>¥326,699〜<br>¥376,200</td>
+          <td>¥280,000〜<br>¥360,000</td>
+          <td>¥300,000〜<br>¥341,000</td>
+        </tr>
+        <tr>
+          <td>鮮度保持（チルド）</td>
+          <td><span class="star">★★★★★</span></td>
+          <td><span class="star">★★★★</span><span class="star-empty">★</span></td>
+          <td><span class="star">★★★★★</span></td>
+          <td><span class="star">★★★★</span><span class="star-empty">★</span></td>
+        </tr>
+        <tr>
+          <td>冷凍性能</td>
+          <td><span class="star">★★★★</span><span class="star-empty">★</span></td>
+          <td><span class="star">★★★★</span><span class="star-empty">★</span></td>
+          <td><span class="star">★★★★★</span></td>
+          <td><span class="star">★★★</span><span class="star-empty">★★</span></td>
+        </tr>
+        <tr>
+          <td>野菜保存力</td>
+          <td><span class="star">★★★★</span><span class="star-empty">★</span></td>
+          <td><span class="star">★★★★</span><span class="star-empty">★</span></td>
+          <td><span class="star">★★★★</span><span class="star-empty">★</span></td>
+          <td><span class="star">★★★★★</span></td>
+        </tr>
+        <tr>
+          <td>省エネ性能</td>
+          <td><span class="star">★★★★</span><span class="star-empty">★</span></td>
+          <td><span class="star">★★★★</span><span class="star-empty">★</span></td>
+          <td><span class="star">★★★★★</span></td>
+          <td><span class="star">★★★★★</span></td>
+        </tr>
+        <tr>
+          <td>収納使いやすさ</td>
+          <td><span class="star">★★★★★</span></td>
+          <td><span class="star">★★★★★</span></td>
+          <td><span class="star">★★★★</span><span class="star-empty">★</span></td>
+          <td><span class="star">★★★★</span><span class="star-empty">★</span></td>
+        </tr>
+        <tr>
+          <td>スマート機能（AI/IoT）</td>
+          <td><span class="star">★★★★★</span></td>
+          <td><span class="star">★★★★★</span></td>
+          <td><span class="star">★★★★</span><span class="star-empty">★</span></td>
+          <td><span class="star">★★★</span><span class="star-empty">★★</span></td>
+        </tr>
+        <tr>
+          <td>静音性</td>
+          <td><span class="star">★★★★</span><span class="star-empty">★</span></td>
+          <td><span class="star">★★★★</span><span class="star-empty">★</span></td>
+          <td><span class="star">★★★★★</span></td>
+          <td><span class="star">★★★★</span><span class="star-empty">★</span></td>
+        </tr>
+        <tr>
+          <td>デザイン性</td>
+          <td><span class="star">★★★★</span><span class="star-empty">★</span></td>
+          <td><span class="star">★★★★★</span></td>
+          <td><span class="star">★★★★</span><span class="star-empty">★</span></td>
+          <td><span class="star">★★★</span><span class="star-empty">★★</span></td>
+        </tr>
+        <tr>
+          <td>コストパフォーマンス</td>
+          <td><span class="star">★★★</span><span class="star-empty">★★</span></td>
+          <td><span class="star">★★★</span><span class="star-empty">★★</span></td>
+          <td><span class="star">★★★★</span><span class="star-empty">★</span></td>
+          <td><span class="star">★★★★</span><span class="star-empty">★</span></td>
+        </tr>
+        <tr>
+          <td>特徴的な独自機能</td>
+          <td>真空チルド<br>まるごとチルド</td>
+          <td>ナノイーX<br>はやうま冷凍</td>
+          <td>切れちゃう瞬冷凍A.I.<br>できちゃうV冷凍</td>
+          <td>摘みたて野菜室<br>Deliチルド</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- ===== おすすめランキング ===== -->
+  <h2 class="section-title">用途別 おすすめランキング TOP5</h2>
+
+  <div class="ranking-grid">
+
+    <div class="rank-card rank-1">
+      <div class="rank-badge">1</div>
+      <div class="rank-card-header">
+        <div class="model-title">三菱電機 MR-WZ61N</div>
+        <div class="model-sub">610L ／ 2026年2月発売最新モデル</div>
+      </div>
+      <div class="rank-card-body">
+        <div class="rank-price">¥280,000〜 <span>（参考価格）</span></div>
+        <div>
+          <span class="tag tag-red">瞬冷凍A.I.</span>
+          <span class="tag tag-green">年間電気代8,463円</span>
+          <span class="tag tag-blue">スマホ連携</span>
+          <span class="tag tag-teal">フルオープン</span>
+        </div>
+        <p class="rank-features" style="margin-top:10px;">
+          最新モデルで省エネ性能が最高水準。「切れちゃう瞬冷凍A.I.」による解凍不要の冷凍保存、「できちゃうV冷凍」による野菜冷凍、独立したチルド＋パーシャル室、タッチパネル・スマホ連携と現代的な機能が充実。静音性も業界トップ水準。
+        </p>
+        <div class="rank-verdict">バランス◎・省エネ最優先・冷凍食品をよく使うご家庭に最適</div>
+      </div>
+    </div>
+
+    <div class="rank-card rank-2">
+      <div class="rank-badge">2</div>
+      <div class="rank-card-header">
+        <div class="model-title">東芝 GR-Y640XFS</div>
+        <div class="model-sub">643L ／ 幅68.5cmで業界最大級</div>
+      </div>
+      <div class="rank-card-body">
+        <div class="rank-price">¥300,000〜¥341,000 <span>（参考）</span></div>
+        <div>
+          <span class="tag tag-teal">野菜室最強</span>
+          <span class="tag tag-blue">643L大容量</span>
+          <span class="tag tag-green">薄壁化技術</span>
+          <span class="tag tag-amber">Deliチルド</span>
+        </div>
+        <p class="rank-features" style="margin-top:10px;">
+          幅68.5cmのまま643Lという驚異の容積効率。特許技術による「摘みたて野菜室」は全メーカー中でも野菜保存力が最高峰。フリー棚40通りの収納自由度、Deliチルドで7日間作り置き保存も可能。
+        </p>
+        <div class="rank-verdict">大家族・野菜をよく使う・収納量を最優先したいご家庭に</div>
+      </div>
+    </div>
+
+    <div class="rank-card rank-3">
+      <div class="rank-badge">3</div>
+      <div class="rank-card-header">
+        <div class="model-title">日立 R-HWC62X</div>
+        <div class="model-sub">617L ／ AIカメラ搭載・コスパ上位モデル</div>
+      </div>
+      <div class="rank-card-body">
+        <div class="rank-price">¥221,921〜¥304,000 <span>（参考）</span></div>
+        <div>
+          <span class="tag tag-blue">AIカメラ</span>
+          <span class="tag tag-green">まるごとチルド</span>
+          <span class="tag tag-amber">AI節電</span>
+        </div>
+        <p class="rank-features" style="margin-top:10px;">
+          617Lの大容量でありながら日立の上位モデルとしては比較的求めやすい価格帯。AIカメラで食材を自動記録しスマホで確認可能。冷蔵室全段チルド保存の「まるごとチルド」で肉・魚・総菜を鮮度良く保存。
+        </p>
+        <div class="rank-verdict">日立の鮮度技術を体験したい・予算を少し抑えたいご家庭に</div>
+      </div>
+    </div>
+
+    <div class="rank-card rank-4">
+      <div class="rank-badge">4</div>
+      <div class="rank-card-header">
+        <div class="model-title">パナソニック NR-F60WX2</div>
+        <div class="model-sub">601L ／ ナノイーX・フルオープン・高級デザイン</div>
+      </div>
+      <div class="rank-card-body">
+        <div class="rank-price">¥326,699〜¥376,200 <span>（参考）</span></div>
+        <div>
+          <span class="tag tag-blue">ナノイーX</span>
+          <span class="tag tag-green">フルオープン</span>
+          <span class="tag tag-amber">はやうま冷凍</span>
+          <span class="tag tag-purple">ガラスドア</span>
+        </div>
+        <p class="rank-features" style="margin-top:10px;">
+          フルフラットガラスドアのインテリア性と機能性を高いレベルで両立。ナノイーXによる庫内の清潔維持、フルオープン引き出しで奥まで使いやすく、はやうま冷凍で自家製冷凍食品を美味しく保存。
+        </p>
+        <div class="rank-verdict">デザイン重視・キッチンに高級感を求める・スマート機能が好きな方に</div>
+      </div>
+    </div>
+
+    <div class="rank-card rank-5">
+      <div class="rank-badge">5</div>
+      <div class="rank-card-header">
+        <div class="model-title">東芝 GR-Y600FH</div>
+        <div class="model-sub">601L ／ コストパフォーマンス最優秀モデル</div>
+      </div>
+      <div class="rank-card-body">
+        <div class="rank-price">¥185,080〜¥254,195 <span>（参考）</span></div>
+        <div>
+          <span class="tag tag-teal">うるおい冷気</span>
+          <span class="tag tag-green">コスパ最強</span>
+          <span class="tag tag-blue">速鮮チルド</span>
+        </div>
+        <p class="rank-features" style="margin-top:10px;">
+          600L級の中では最も求めやすい価格帯。うるおい冷気で食品の乾燥を防ぎ、2段式の速鮮チルドと解凍モードで使いやすく設計。高機能モデルには劣るが、基本的な鮮度保持・冷凍機能は十分。
+        </p>
+        <div class="rank-verdict">予算を抑えつつ600Lを確保したい・機能より価格重視の方に</div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- ===== 選び方ガイド ===== -->
+  <h2 class="section-title">600L冷蔵庫 選び方のポイント</h2>
+
+  <div class="guide-grid">
+    <div class="guide-card">
+      <div class="num">1</div>
+      <h3>設置スペースを最優先で確認</h3>
+      <p>本体幅＋10cm以上の搬入経路が必要です。ほとんどの600Lモデルは幅68.5cmですが、パナソニック NR-F65WX2は幅75cm。廊下・ドア・エレベーターの幅も事前に採寸してください。重量も100〜135kgあります。</p>
+    </div>
+    <div class="guide-card">
+      <div class="num">2</div>
+      <h3>冷凍をよく使うなら三菱電機</h3>
+      <p>「切れちゃう瞬冷凍A.I.」は約−7℃で凍らせるため、解凍不要でそのまま調理できます。週の作り置きやまとめ買いが多い家庭に最適。「できちゃうV冷凍」で冷凍野菜を好みのサイズに調整できるのも便利。</p>
+    </div>
+    <div class="guide-card">
+      <div class="num">3</div>
+      <h3>肉・魚の鮮度を重視するなら日立</h3>
+      <p>約0.8気圧の真空状態を作る「真空チルド」は、酸化を抑えて肉・魚を長期鮮度保持。冷蔵室全段チルドの「まるごとチルド」も日立独自の強み。AIカメラで庫内を管理したい方はR-HWC62Xを。</p>
+    </div>
+    <div class="guide-card">
+      <div class="num">4</div>
+      <h3>野菜をよく食べるなら東芝VEGETA</h3>
+      <p>特許技術の「摘みたて野菜室」はシャキシャキ食感を長期維持。野菜の鮮度保持能力は各社比較でも最高峰の評価を受けています。大容量643LのGR-Y640XFSは収納量も業界最大クラス。</p>
+    </div>
+    <div class="guide-card">
+      <div class="num">5</div>
+      <h3>省エネ・電気代を重視するなら</h3>
+      <p>三菱 MR-WZ61Nは年間電気代約8,463円と業界最高水準の省エネ性能。東芝も省エネ大賞受賞実績あり。電気代高騰の今、10年使う冷蔵庫なら省エネ性能の差は10〜20万円の差になることも。</p>
+    </div>
+    <div class="guide-card">
+      <div class="num">6</div>
+      <h3>デザイン・インテリア性なら</h3>
+      <p>パナソニックのフルフラットガラスドア（オニキスミラー・ミスティスチールグレー）は圧倒的な高級感。継ぎ目のないデザインはキッチンの雰囲気を格上げします。日立・東芝もミラー仕上げモデルを展開。</p>
+    </div>
+  </div>
+
+  <!-- ===== まとめ ===== -->
+  <h2 class="section-title">総括：日立からの買い替え候補</h2>
+
+  <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:28px 28px; box-shadow:var(--shadow-sm);">
+    <p style="font-size:15px; color:var(--text-sub); line-height:1.9; margin-bottom:16px;">
+      現在日立をお使いで、鮮度保持の機能を気に入っていた場合は<strong>日立 R-HWC62X</strong>（コスパ最高・AIカメラ付き）か、機能を最大化したいなら<strong>R-HXCC62X-X</strong>への継続が安心です。
+    </p>
+    <p style="font-size:15px; color:var(--text-sub); line-height:1.9; margin-bottom:16px;">
+      新しいメーカーへの乗り換えを検討するなら、<strong>三菱電機 MR-WZ61N</strong>（2026年最新・省エネ最高・冷凍特化）または<strong>東芝 GR-Y640XFS</strong>（643L・野菜保存・収納量）が有力候補です。
+    </p>
+    <p style="font-size:15px; color:var(--text-sub); line-height:1.9;">
+      デザインと全体バランスで選ぶなら<strong>パナソニック NR-F60WX2</strong>。価格を抑えつつ600Lを実現したいなら<strong>東芝 GR-Y600FH</strong>（約18〜25万円）がコストパフォーマンス最強の選択肢です。
+    </p>
+
+    <div style="margin-top:24px; display:grid; grid-template-columns:repeat(auto-fill, minmax(200px, 1fr)); gap:12px;">
+      <div style="background:var(--red-light); border-radius:8px; padding:14px 16px;">
+        <div style="font-size:12px; color:var(--red); font-weight:700; margin-bottom:4px;">鮮度・チルド重視</div>
+        <div style="font-weight:800; font-size:15px;">日立 R-HWC62X</div>
+        <div style="font-size:13px; color:var(--text-muted); margin-top:2px;">～¥304,000</div>
+      </div>
+      <div style="background:var(--red-light); border-radius:8px; padding:14px 16px;">
+        <div style="font-size:12px; color:var(--red); font-weight:700; margin-bottom:4px;">冷凍・省エネ最強</div>
+        <div style="font-weight:800; font-size:15px;">三菱 MR-WZ61N</div>
+        <div style="font-size:13px; color:var(--text-muted); margin-top:2px;">¥280,000〜</div>
+      </div>
+      <div style="background:var(--teal-light); border-radius:8px; padding:14px 16px;">
+        <div style="font-size:12px; color:var(--teal); font-weight:700; margin-bottom:4px;">大容量・野菜最強</div>
+        <div style="font-weight:800; font-size:15px;">東芝 GR-Y640XFS</div>
+        <div style="font-size:13px; color:var(--text-muted); margin-top:2px;">¥300,000〜¥341,000</div>
+      </div>
+      <div style="background:var(--blue-light); border-radius:8px; padding:14px 16px;">
+        <div style="font-size:12px; color:var(--blue); font-weight:700; margin-bottom:4px;">デザイン・バランス</div>
+        <div style="font-weight:800; font-size:15px;">パナソニック NR-F60WX2</div>
+        <div style="font-size:13px; color:var(--text-muted); margin-top:2px;">¥326,699〜</div>
+      </div>
+      <div style="background:var(--green-light); border-radius:8px; padding:14px 16px;">
+        <div style="font-size:12px; color:var(--green); font-weight:700; margin-bottom:4px;">コスパ最強</div>
+        <div style="font-weight:800; font-size:15px;">東芝 GR-Y600FH</div>
+        <div style="font-size:13px; color:var(--text-muted); margin-top:2px;">¥185,080〜¥254,000</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end wrapper -->
+
+<div class="footer">
+  <p>調査日：2026年4月12日 ／ 価格は参考値（最安価格〜メーカー希望小売価格）。実際の価格は各販売店でご確認ください。</p>
+  <p style="margin-top:6px;">参考：<a href="https://my-best.com/18025" target="_blank" style="color:var(--blue);">マイベスト 600L台冷蔵庫ランキング</a> ／ <a href="https://kakaku.com/kaden/freezer/" target="_blank" style="color:var(--blue);">価格.com 冷蔵庫</a> ／ <a href="https://fridge.rank-king.jp/article/205" target="_blank" style="color:var(--blue);">ランク王 600L以上大型冷蔵庫</a></p>
+</div>
+
+</body>
+</html>
